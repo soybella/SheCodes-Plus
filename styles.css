@@ -1,0 +1,124 @@
+body {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #5b6275;
+  margin: 30px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  padding-left: 10px;
+}
+
+form {
+  max-width: 700px;
+}
+
+p {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  border: 2px solid #5b6275;
+  max-width: 700px;
+}
+
+.search-city {
+  font-size: 14px;
+}
+
+.search-button {
+  display: block;
+  margin: 0 auto;
+  background: #cf93d8;
+  color: white;
+  font-size: 14px;
+  border: none;
+}
+
+.search-button:hover {
+  background-color: #ba79c4;
+}
+
+.current-button {
+  display: block;
+  margin: 0 auto;
+  background: #9999ff;
+  color: white;
+  font-size: 14px;
+  border: none;
+}
+
+.current-button:hover {
+  background-color: #8080ff;
+}
+
+.current-city {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.percentage,
+.wind-mph,
+.high-temp,
+.weekdays {
+  font-weight: bold;
+}
+
+.fahrenheit-symbol {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+.celsius-symbol {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.current-city-detail.left {
+  font-size: 12px;
+}
+
+.current-city-detail.right {
+  text-align: right;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.current-weather-icon {
+  font-size: 40px;
+  background-color: #eaedf8;
+  border: 1px solid #5b8de9;
+  border-radius: 50%;
+  padding: 4px 10px 4px 10px;
+  margin: 0 auto;
+}
+
+.weekdays-info {
+  font-size: 15px;
+  text-align: center;
+}
+
+.weekdays-weather-icons {
+  font-size: 28px;
+  margin: 0 auto;
+}
+
+.icon {
+  background-color: #eaedf8;
+  border: 1px solid #5b8de9;
+  border-radius: 50%;
+  width: 55px;
+  margin: 0 auto;
+}
