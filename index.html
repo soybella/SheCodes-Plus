@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <title>SheCodes - Weather App</title>
+  </head>
+  <body>
+    <div class="container p-4">
+      <h2>Wire frame Weather App Project</h2>
+      <form action="submit" class="form-inline" id="submit-city-form">
+        <div class="row p-2">
+          <div class="col-6">
+            <input
+              type="text"
+              class="search-city form-control"
+              id="search-city"
+              placeholder="Enter a city..."
+              autofocus
+            />
+          </div>
+          <div class="col-3">
+            <input
+              type="submit"
+              class="search-button btn btn-primary form-control"
+              id="search-city-button"
+              value="Search"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              type="submit"
+              class="current-button btn btn-primary form-control"
+              id="current-city-button"
+              value="Current"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="current-city-info">
+        <div class="row p-3">
+          <div class="current-city-detail left col-6">
+            <div class="current-city" id="current-city">Enter a city...</div>
+            <div class="current-day" id="current-day-info">Thursday 12:00</div>
+            <div class="current-description" id="current-description">
+              Description
+            </div>
+            <span class="current-humidity"
+              >Humidity:
+              <span class="percentage" id="current-city-humidity-percentage"
+                >0%
+              </span></span
+            >
+            <span class="current-wind"
+              >Wind:
+              <span class="wind-mph" id="current-city-wind-mph"
+                >0mph</span
+              ></span
+            >
+          </div>
+          <div class="current-city-detail right col-6">
+            <span class="current-weather-icon" id="current-weather-icon"
+              >🌧</span
+            >
+            <span class="current-temp" id="current-temp">0</span>
+            <!-- <a href="#"
+              ><div class="celsius-symbol" id="celsius-symbol">°C</div>
+            </a>
+            <p>|</p> -->
+            <a href="#"
+              ><div class="fahrenheit-symbol" id="fahrenheit-symbol">°F</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="weekdays-info p-4">
+        <div class="weekdays">
+          <div class="row">
+            <div class="col-2">Fri</div>
+            <div class="col-2">Sat</div>
+            <div class="col-2">Sun</div>
+            <div class="col-2">Mon</div>
+            <div class="col-2">Tue</div>
+            <div class="col-2">Wed</div>
+          </div>
+        </div>
+        <div class="weekdays-weather-icons">
+          <div class="row">
+            <div class="icon col-2">🌧</div>
+            <div class="icon col-2">🌧</div>
+            <div class="icon col-2">⛅️</div>
+            <div class="icon col-2">🌧</div>
+            <div class="icon col-2">🌧</div>
+            <div class="icon col-2">🌧</div>
+          </div>
+        </div>
+        <div class="weekdays-temps">
+          <div class="row">
+            <div class="col-2">49° <span class="high-temp">57°</span></div>
+            <div class="col-2">48° <span class="high-temp">58°</span></div>
+            <div class="col-2">44° <span class="high-temp">57°</span></div>
+            <div class="col-2">43° <span class="high-temp">49°</span></div>
+            <div class="col-2">41° <span class="high-temp">51°</span></div>
+            <div class="col-2">47° <span class="high-temp">57°</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a href="https://github.com/soybella/SheCodes-Plus">Open-source code</a>
+      by Isabella Lizarde
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
