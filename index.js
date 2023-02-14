@@ -93,3 +93,27 @@ function haltCurrentLocation(event) {
 
 let searchCurrentLocation = document.querySelector("#current-city-button");
 searchCurrentLocation.addEventListener("click", haltCurrentLocation);
+
+function changeToFahrenheit() {
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let currentCelsiusTemp = document.querySelector("#current-temp");
+  let celsiusTemp = currentCelsiusTemp.innerHTML;
+  celsiusTemp = Number(celsiusTemp);
+  currentCelsiusTemp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
+}
+
+let fahrenheit = document.querySelector("#fahrenheit-symbol");
+fahrenheit.addEventListener("click", changeToFahrenheit);
+
+function changeToCelsius() {
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let currentFahrenheitTemp = document.querySelector("#current-temp");
+  let fahrenheitTemp = currentFahrenheitTemp.innerHTML;
+  fahrenheitTemp = Number(fahrenheitTemp);
+  currentFahrenheitTemp.innerHTML = Math.round(((fahrenheitTemp - 32) * 5) / 9);
+}
+
+let celsius = document.querySelector("#celsius-symbol");
+celsius.addEventListener("click", changeToCelsius);
