@@ -126,3 +126,7 @@ footer {
   width: 55px;
   margin: 0 auto;
 }
+
+#current-description:first-letter {
+  text-transform: capitalize;
+}
