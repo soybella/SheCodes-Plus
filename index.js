@@ -35,6 +35,7 @@ function getCurrentWeather(response) {
   let humidity = Math.round(response.data.main.humidity);
   let wind = Math.round(response.data.wind.speed);
   let description = response.data.weather[0].description;
+  let icon = document.querySelector("#current-weather-icon");
 
   let showTemperature = document.querySelector("#current-temp");
   showTemperature.innerHTML = temperature;
@@ -49,6 +50,12 @@ function getCurrentWeather(response) {
 
   let showDescription = document.querySelector("#current-description");
   showDescription.innerHTML = description;
+
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  console.log(icon);
 }
 
 function inputCity(event) {

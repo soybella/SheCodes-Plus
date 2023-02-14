@@ -101,12 +101,14 @@ footer {
 }
 
 .current-weather-icon {
-  font-size: 40px;
+  /* font-size: 50px; */
   background-color: #eaedf8;
   border: 1px solid #5b8de9;
   border-radius: 50%;
   padding: 4px 10px 4px 10px;
   margin: 0 auto;
+  width: 55px;
+  height: 45px;
 }
 
 .weekdays-info {
