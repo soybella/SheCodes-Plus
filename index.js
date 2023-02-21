@@ -69,14 +69,12 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
-  // console.log(forecastHTML);
 }
 
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "58a6775f97527351bf6c6966e209be39";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  // console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -108,7 +106,6 @@ function getCurrentWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  // console.log(response.data);
 
   getForecast(response.data.coord);
 }
@@ -121,7 +118,6 @@ function inputCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(`${apiUrl}`).then(getCurrentWeather);
-  // console.log(apiUrl);
 }
 
 let searchCityForm = document.querySelector("#submit-city-form");
@@ -138,7 +134,6 @@ function currentPosition(position) {
   let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 
   axios.get(`${apiUrl}`).then(getCurrentWeather);
-  // console.log(apiUrl);
 }
 
 function haltCurrentLocation(event) {
