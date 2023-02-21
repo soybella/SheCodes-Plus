@@ -27,6 +27,61 @@ let currentDate = new Date();
 
 weatherCurrentDate.innerHTML = weatherDateInfo(currentDate);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+// get weather for forecast
+function displayForecast(response) {
+  let weeklyForecast = response.data.daily;
+
+  let forecast = document.querySelector("#forecast");
+
+  // let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  weeklyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+    <div class="col-2">
+      <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+      <img
+        class="current-weather-icon"
+        id="current-weather-icon"
+        src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"
+      />
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature-max">${Math.round(
+          forecastDay.temp.max
+        )}</span>
+        <span class="weather-forecast-temperature-max high-temp">${Math.round(
+          forecastDay.temp.min
+        )}</span>
+      </div>
+    </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+  // console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "58a6775f97527351bf6c6966e209be39";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  // console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // get weather from city input
 
 function getCurrentWeather(response) {
@@ -55,7 +110,9 @@ function getCurrentWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  // console.log(icon);
+  // console.log(response.data);
+
+  getForecast(response.data.coord);
 }
 
 function inputCity(event) {
@@ -93,6 +150,8 @@ function haltCurrentLocation(event) {
 
 let searchCurrentLocation = document.querySelector("#current-city-button");
 searchCurrentLocation.addEventListener("click", haltCurrentLocation);
+
+// displayForecast();
 
 function changeToFahrenheit() {
   celsius.classList.remove("active");

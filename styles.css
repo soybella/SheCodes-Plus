@@ -73,7 +73,7 @@ footer {
 .percentage,
 .wind-mph,
 .high-temp,
-.weekdays {
+.weather-forecast-date {
   font-weight: bold;
 }
 
