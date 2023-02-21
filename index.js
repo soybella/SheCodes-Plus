@@ -41,8 +41,6 @@ function displayForecast(response) {
 
   let forecast = document.querySelector("#forecast");
 
-  // let days = ["Thu", "Fri", "Sat", "Sun"];
-
   let forecastHTML = `<div class="row">`;
   weeklyForecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -61,10 +59,10 @@ function displayForecast(response) {
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">${Math.round(
           forecastDay.temp.max
-        )}</span>
+        )}°</span>
         <span class="weather-forecast-temperature-max high-temp">${Math.round(
           forecastDay.temp.min
-        )}</span>
+        )}°</span>
       </div>
     </div>`;
     }
@@ -150,29 +148,3 @@ function haltCurrentLocation(event) {
 
 let searchCurrentLocation = document.querySelector("#current-city-button");
 searchCurrentLocation.addEventListener("click", haltCurrentLocation);
-
-// displayForecast();
-
-function changeToFahrenheit() {
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-  let currentCelsiusTemp = document.querySelector("#current-temp");
-  let celsiusTemp = currentCelsiusTemp.innerHTML;
-  celsiusTemp = Number(celsiusTemp);
-  currentCelsiusTemp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
-}
-
-let fahrenheit = document.querySelector("#fahrenheit-symbol");
-fahrenheit.addEventListener("click", changeToFahrenheit);
-
-function changeToCelsius() {
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-  let currentFahrenheitTemp = document.querySelector("#current-temp");
-  let fahrenheitTemp = currentFahrenheitTemp.innerHTML;
-  fahrenheitTemp = Number(fahrenheitTemp);
-  currentFahrenheitTemp.innerHTML = Math.round(((fahrenheitTemp - 32) * 5) / 9);
-}
-
-let celsius = document.querySelector("#celsius-symbol");
-celsius.addEventListener("click", changeToCelsius);
